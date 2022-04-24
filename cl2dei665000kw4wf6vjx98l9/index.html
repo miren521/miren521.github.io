@@ -5,8 +5,6 @@
   <!-- SEO相关 -->
   
     
-      <meta name="robots" content="noindex,follow">
-    
   
   <!-- 渲染优化 -->
   <meta name="renderer" content="webkit">
@@ -19,9 +17,13 @@
 
   <!-- 页面元数据 -->
   
-  <title>分类：基础 - 糜家智の博客</title>
+  <title>uniapp中动态底部导航栏tabbar实现，权限管理 - 糜家智の博客</title>
+  
+    <meta name="keywords" content="前端,uni-app,页面操作">
   
 
+  
+    <meta name="description" content="有时候根据业务的需求，需要实现权限，或者是动态底部的导航栏，这是其中一种实现方法，我自己就用。此方法需要借助uView的自定义导航栏">
   
 
   <!-- feed -->
@@ -458,7 +460,7 @@
   
     
     
-        <div class='cover-wrapper  dock' style="display: none;">
+        <div class='cover-wrapper post dock' style="display: none;">
           
             <div class='cover-bg lazyload placeholder' data-bg="https://miaomwu.com/wp-content/uploads/2021/05/%E5%8E%8B%E7%BC%A92-43.jpg"></div>
           
@@ -533,8 +535,8 @@
  
  
 <div id="pjax-data" style="display: none"> 
-  <div id="pjax-ispage">false</div> 
-  <div id="pjax-pageTitle"></div> 
+  <div id="pjax-ispage">true</div> 
+  <div id="pjax-pageTitle">uniapp中动态底部导航栏tabbar实现，权限管理</div> 
   <div id="pjax-enable-cover">true</div> 
   <div id="pjax-comment-path"></div> 
   <div id="pjax-comment-placeholder"></div> 
@@ -563,224 +565,290 @@
         
         
 
-
 <div class='l_main'>
+  <article class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   
+
+
+  
+  <div class="article-meta" id="top">
     
-      
-  <section class="post-list">
     
-      
+    
+      <h1 class="title">
+        uniapp中动态底部导航栏tabbar实现，权限管理
+      </h1>
+      <div class='new-meta-box'>
         
+          
+            
+<div class='new-meta-item author'>
+  <a class='author' target="_blank" href="https://gitee.com/miren123" rel="nofollow noopener">
+    <img no-lazy src="https://i.loli.net/2021/07/25/yZf7BSRIAc1lFGp.png">
+    <p>Mr. mi</p>
+  </a>
+</div>
+
           
         
           
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/ckycsfmmh002pm0wfbombcal7/">
-        前端指南-面试-js部分
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>这是对于前端-js部分的学习笔记及分享，会一直更新，保持学习的进步</p>
-    
+            
+  <div class='new-meta-item category'>
+    <a class='notlink'>
+      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+      <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/uni-app/">uni-app</a>
+    </a>
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+
+
+          
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://gitee.com/miren123'><img src='https://i.loli.net/2021/07/25/yZf7BSRIAc1lFGp.png'></a>
+            <div class="new-meta-item date">
+  <a class='notlink'>
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2022年4月24日</p>
+  </a>
+</div>
+
+          
         
-        <time>2021-08-23</time>
+          
+            
+  <div class="new-meta-item browse leancloud">
+    <a class='notlink'>
+      
+      <div id="lc-pv" data-title="uniapp中动态底部导航栏tabbar实现，权限管理" data-path="/cl2dei665000kw4wf6vjx98l9/">
+        <i class="fas fa-eye fa-fw" aria-hidden="true"></i>
+        <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span>
+        次浏览
+      </div>
+    </a>
+  </div>
+
+
+          
         
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/">基础</a>
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：734字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+          
         
       </div>
+    
+  </div>
+
+
+  
+  <p>有时候根据业务的需求，需要实现权限，或者是动态底部的导航栏，这是其中一种实现方法，我自己就用。<br>此方法需要借助uView的自定义导航栏</p>
+<a id="more"></a>
+
+<h3 id="uniapp中动态tabbar实现"><a href="#uniapp中动态tabbar实现" class="headerlink" title="uniapp中动态tabbar实现"></a>uniapp中动态tabbar实现</h3><p>按照正常的方法引入uView，在需要用到导航栏的页面引入即可。<br>不过page.json里也要正常配置</p>
+<blockquote>
+<p>需要用到的页面</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">	&lt;view class&#x3D;&quot;body&quot;&gt;</span><br><span class="line">        &lt;u-tabbar v-model&#x3D;&quot;current&quot; :before-switch&#x3D;&quot;beforeSwitch&quot; active-color&#x3D;&quot;#1d6869&quot; :list&#x3D;&quot;tabarList&quot;&gt;&lt;&#x2F;u-tabbar&gt;</span><br><span class="line">    &lt;&#x2F;view&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">	import &#123;</span><br><span class="line">		mapState,</span><br><span class="line">		mapMutations</span><br><span class="line">	&#125; from &quot;vuex&quot;;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">	export default &#123;</span><br><span class="line">		components: &#123;&#125;,</span><br><span class="line">		data() &#123;</span><br><span class="line">			return &#123;&#125;;</span><br><span class="line">		&#125;,</span><br><span class="line">		computed: &#123;</span><br><span class="line">			...mapState([&quot;tabarList&quot;]),</span><br><span class="line">		&#125;,</span><br><span class="line">		onLoad() &#123;&#125;,</span><br><span class="line"></span><br><span class="line">		methods: &#123;</span><br><span class="line">			...mapMutations([&quot;setTabarList&quot;]),</span><br><span class="line">			beforeSwitch(index) &#123;</span><br><span class="line">				if (this.tabarList[index].text &#x3D;&#x3D; &quot;客服&quot;) &#123;</span><br><span class="line">					this.kfshow &#x3D; true;</span><br><span class="line">					return false;</span><br><span class="line">				&#125; else &#123;</span><br><span class="line">					return true;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;,</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>创建目录utils/tabBar.js<br>这是封装权限的目录</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 个人用户</span></span><br><span class="line"><span class="keyword">const</span> member = [&#123;</span><br><span class="line">		iconPath: <span class="string">&quot;home&quot;</span>,</span><br><span class="line">		selectedIconPath: <span class="string">&quot;home-fill&quot;</span>,</span><br><span class="line">		text: <span class="string">&#x27;个人首页&#x27;</span>,</span><br><span class="line">		customIcon: <span class="literal">false</span>,</span><br><span class="line">		pagePath: <span class="string">&#x27;/pages/index/index&#x27;</span>,</span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line">		iconPath: <span class="string">&quot;account&quot;</span>,</span><br><span class="line">		selectedIconPath: <span class="string">&quot;account-fill&quot;</span>,</span><br><span class="line">		text: <span class="string">&#x27;我的&#x27;</span>,</span><br><span class="line">		isDot: <span class="literal">false</span>,</span><br><span class="line">		pagePath: <span class="string">&#x27;/pages/my/my&#x27;</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">]</span><br><span class="line"><span class="comment">// 企业用户</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> firm = [</span><br><span class="line">	&#123;</span><br><span class="line">		iconPath: <span class="string">&quot;account&quot;</span>,</span><br><span class="line">		selectedIconPath: <span class="string">&quot;account-fill&quot;</span>,</span><br><span class="line">		text: <span class="string">&#x27;企业首页&#x27;</span>,</span><br><span class="line">		isDot: <span class="literal">false</span>,</span><br><span class="line">		pagePath: <span class="string">&#x27;/pages/enterprise/enterprise&#x27;</span></span><br><span class="line">	&#125;,</span><br><span class="line"></span><br><span class="line">	&#123;</span><br><span class="line">		iconPath: <span class="string">&quot;account&quot;</span>,</span><br><span class="line">		selectedIconPath: <span class="string">&quot;account-fill&quot;</span>,</span><br><span class="line">		text: <span class="string">&#x27;我的&#x27;</span>,</span><br><span class="line">		isDot: <span class="literal">false</span>,</span><br><span class="line">		pagePath: <span class="string">&#x27;/pages/my/my&#x27;</span>,</span><br><span class="line">	&#125;,</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">	member,</span><br><span class="line">	firm</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>利用vuex，创建目录store/index.js</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Vue <span class="keyword">from</span> <span class="string">&#x27;vue&#x27;</span></span><br><span class="line"><span class="keyword">import</span> Vuex <span class="keyword">from</span> <span class="string">&#x27;vuex&#x27;</span></span><br><span class="line"><span class="keyword">import</span> storage <span class="keyword">from</span> <span class="string">&#x27;../common/storage&#x27;</span></span><br><span class="line"><span class="keyword">import</span> tabBar <span class="keyword">from</span> <span class="string">&#x27;@/untils/tabBar.js&#x27;</span></span><br><span class="line"></span><br><span class="line">Vue.use(Vuex)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取用户的类型，也可以根据业务判断具体的权限</span></span><br><span class="line"><span class="keyword">let</span> userInfo = storage.getJson(<span class="string">&#x27;userInfo&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> type = <span class="string">&#x27;member&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(userInfo != <span class="literal">null</span>)&#123;</span><br><span class="line">	<span class="keyword">switch</span>(userInfo.utype)&#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;1&#x27;</span>:</span><br><span class="line">			type = <span class="string">&#x27;member&#x27;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="string">&#x27;2&#x27;</span>:</span><br><span class="line">			type = <span class="string">&#x27;firm&#x27;</span></span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> store = <span class="keyword">new</span> Vuex.Store(&#123;</span><br><span class="line">	state: &#123;</span><br><span class="line">		tabarList: tabBar[type], <span class="comment">// 动态底部导航栏</span></span><br><span class="line">	&#125;,</span><br><span class="line">	mutations: &#123;</span><br><span class="line">        setTabarList(state, list) &#123;</span><br><span class="line">			state.tabarList = list</span><br><span class="line">		&#125;,</span><br><span class="line">	&#125;,</span><br><span class="line">	getters: &#123;</span><br><span class="line">	&#125;,</span><br><span class="line">	actions: &#123;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>main.js 配置</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;./store&#x27;</span></span><br><span class="line">Vue.prototype.$store = store</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>封装可以全局调用的方法，在需要的地方调用，实时改变底部导航栏</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> storage <span class="keyword">from</span> <span class="string">&quot;./storage&quot;</span>;</span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">&#x27;../store&#x27;</span></span><br><span class="line"><span class="keyword">import</span> tabBar <span class="keyword">from</span> <span class="string">&#x27;@/untils/tabBar.js&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">   set(name, value) &#123;</span><br><span class="line">      uni.setStorageSync(name, value);</span><br><span class="line">   &#125;,</span><br><span class="line">   get(name) &#123;</span><br><span class="line">      <span class="keyword">return</span> uni.getStorageSync(name);</span><br><span class="line">   &#125;,</span><br><span class="line">   remove(name) &#123;</span><br><span class="line">      uni.removeStorageSync(name);</span><br><span class="line">   &#125;,</span><br><span class="line">   clear() &#123;</span><br><span class="line">      uni.clearStorageSync();</span><br><span class="line">   &#125;,</span><br><span class="line">   changeList() &#123;</span><br><span class="line">      <span class="keyword">let</span> userInfo = storage.getJson(<span class="string">&quot;userInfo&quot;</span>);</span><br><span class="line">      <span class="keyword">let</span> type = <span class="string">&quot;member&quot;</span>;</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (userInfo != <span class="literal">null</span>) &#123;</span><br><span class="line">         <span class="keyword">switch</span> (userInfo.utype) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;1&quot;</span>:</span><br><span class="line">               type = <span class="string">&quot;member&quot;</span>;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">&quot;2&quot;</span>:</span><br><span class="line">               type = <span class="string">&quot;firm&quot;</span>;</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">               <span class="keyword">break</span>;</span><br><span class="line">         &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      store.state.tabarList = tabBar[type];</span><br><span class="line">   &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>在登录成功，退出账号，再次登录，或者切换身份等调用</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 只调用一次，避免二次渲染，退出登录，清除this.$storage.clear()</span></span><br><span class="line"><span class="keyword">let</span> isTabbar = <span class="built_in">this</span>.$storage.get(<span class="string">&quot;isTabbar&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (isTabbar == <span class="string">&quot;&quot;</span>) &#123;</span><br><span class="line">  <span class="built_in">this</span>.$storage.set(<span class="string">&quot;isTabbar&quot;</span>, <span class="number">1</span>);</span><br><span class="line">  <span class="built_in">this</span>.$storage.changeList()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/ckycsfmmh002pm0wfbombcal7/'>
-            阅读全文
-          </a>
+      
+      
+        <div class='copyright'>
+          <blockquote>
+            
+              
+                <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+              
+            
+              
+                <p>本文永久链接是：<a href=https://miren521.gihub.io/cl2dei665000kw4wf6vjx98l9/>https://miren521.gihub.io/cl2dei665000kw4wf6vjx98l9/</a></p>
+              
+            
+          </blockquote>
         </div>
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2022-04-24T22:46:20+08:00">
+  <a class='notlink'>
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2022年4月24日</p>
+  </a>
 </div>
 
-          </div>
         
       
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/ckycsfmmx0045m0wffclm1yue/">
-        前端指南-css部分
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>这是对于前端-JavaScript部分的学习笔记及分享，会一直更新，保持学习的进步</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
         
           
-          <a class='avatar' target="_blank" rel="noopener" href='https://gitee.com/miren123'><img src='https://i.loli.net/2021/07/25/yZf7BSRIAc1lFGp.png'></a>
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E5%89%8D%E7%AB%AF/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>前端</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/uni-app/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>uni-app</p></a></div> <div class="new-meta-item meta-tags"><a class="tag" href="/tags/%E9%A1%B5%E9%9D%A2%E6%93%8D%E4%BD%9C/" rel="nofollow"><i class="fas fa-hashtag fa-fw" aria-hidden="true"></i><p>页面操作</p></a></div>
+
+
         
-        <time>2021-06-08</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/">基础</a>
-        
-      </div>
       
-        <div>
-          <a class='readmore' href='/ckycsfmmx0045m0wffclm1yue/'>
-            阅读全文
-          </a>
-        </div>
+        
+          
+  <div class="new-meta-item share -mob-share-list">
+  <div class="-mob-share-list share-body">
+    
+      
+        <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://miren521.gihub.io/cl2dei665000kw4wf6vjx98l9/&title=uniapp中动态底部导航栏tabbar实现，权限管理 - 糜家智の博客&summary=有时候根据业务的需求，需要实现权限，或者是动态底部的导航栏，这是其中一种实现方法，我自己就用。此方法需要借助uView的自定义导航栏"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qq.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=https://miren521.gihub.io/cl2dei665000kw4wf6vjx98l9/&title=uniapp中动态底部导航栏tabbar实现，权限管理 - 糜家智の博客&summary=有时候根据业务的需求，需要实现权限，或者是动态底部的导航栏，这是其中一种实现方法，我自己就用。此方法需要借助uView的自定义导航栏"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/qzone.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+        <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer noopener"
+          
+          target="_blank" href="http://service.weibo.com/share/share.php?url=https://miren521.gihub.io/cl2dei665000kw4wf6vjx98l9/&title=uniapp中动态底部导航栏tabbar实现，权限管理 - 糜家智の博客&summary=有时候根据业务的需求，需要实现权限，或者是动态底部的导航栏，这是其中一种实现方法，我自己就用。此方法需要借助uView的自定义导航栏"
+          
+          >
+          
+            <img src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/logo/128/weibo.png" srcset="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAABGdBTUEAALGPC/xhBQAAADhlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAAqACAAQAAAABAAAAAaADAAQAAAABAAAAAQAAAADa6r/EAAAAC0lEQVQIHWNgAAIAAAUAAY27m/MAAAAASUVORK5CYII=">
+          
+        </a>
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+
+
+        
+      
+        
+          
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：734字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fas fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：3分钟</p>
+    </a>
+  </div>
+
+
+        
+      
+    </div>
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+      
+        <a class='next' href='/cl2deciay000gw4wf1mz8dgqv/'>
+          <p class='title'>webstorm设置自定义注释<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>webstorm功能的强大，就不多做介绍了。在开发过程中总是需要对代码进行一些个性化的注解，这样方便咱们更加有效率的开发
+
+
+前言
+普通的注释
+
+1234/**  *   * @param va...</p>
+        </a>
       
     </div>
   
+</article>
 
+
+  
+
+  <article class="post white-box reveal shadow" id="comments">
+    <p ct><i class='fas fa-comments'></i> 评论</p>
+    
+    <div id="valine_container" class="valine_thread">
+  <i class="fas fa-cog fa-spin fa-fw fa-2x"></i>
 </div>
 
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/ckycsfmmp003cm0wffvhj749o/">
-        前端指南-css部分
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>这是对于前端-css部分的学习笔记及分享，会一直更新，保持学习的进步</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://gitee.com/miren123'><img src='https://i.loli.net/2021/07/25/yZf7BSRIAc1lFGp.png'></a>
-        
-        <time>2021-06-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/">基础</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/ckycsfmmp003cm0wffvhj749o/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow">
-  
-  
-  
-  
-    
-    <h2 class="article-title" >
-      <a href="/ckycsfmmo003am0wfc661g0gf/">
-        前端指南-HTML、HTTP、web综合问题
-      </a>
-    </h2>
-  
-  <div class='md'>
-    
-      <p>这是对于前端-HTML、HTTP、web综合问题的学习笔记及分享，会一直更新，保持学习的进步</p>
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-          
-          <a class='avatar' target="_blank" rel="noopener" href='https://gitee.com/miren123'><img src='https://i.loli.net/2021/07/25/yZf7BSRIAc1lFGp.png'></a>
-        
-        <time>2021-06-02</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/">前端</a><span class="sep"></span><a class="category-link" href="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/">基础</a>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/ckycsfmmo003am0wfc661g0gf/'>
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-    
-  </section>
-  
-    
-  
+  </article>
 
 
-    
-  
+
+
+
+
 </div>
 <aside class='l_side'>
   
@@ -858,280 +926,29 @@
   
     
     
-  
 
-  <section class="widget category shadow desktop">
+
+
+  <section class="widget toc-wrapper shadow desktop mobile" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Yapi/" href="/categories/Yapi/"
-            id="categoriesYapi"
-            ><div class='name'>Yapi</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/layui/" href="/categories/layui/"
-            id="categorieslayui"
-            ><div class='name'>layui</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/php/" href="/categories/php/"
-            id="categoriesphp"
-            ><div class='name'>php</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/thinkphp/" href="/categories/thinkphp/"
-            id="categoriesthinkphp"
-            ><div class='name'>thinkphp</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%89%8D%E7%AB%AF/" href="/categories/%E5%89%8D%E7%AB%AF/"
-            id="categoriesE5898DE7ABAF"
-            ><div class='name'>前端</div><div class='badge'>(9)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/uni-app/" href="/categories/%E5%89%8D%E7%AB%AF/uni-app/"
-            id="categoriesE5898DE7ABAFuni-app"
-            ><div class='name'>uni-app</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/vue/" href="/categories/%E5%89%8D%E7%AB%AF/vue/"
-            id="categoriesE5898DE7ABAFvue"
-            ><div class='name'>vue</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/%E5%8F%A4%E6%80%AA/" href="/categories/%E5%89%8D%E7%AB%AF/%E5%8F%A4%E6%80%AA/"
-            id="categoriesE5898DE7ABAFE58FA4E680AA"
-            ><div class='name'>古怪</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/" href="/categories/%E5%89%8D%E7%AB%AF/%E5%9F%BA%E7%A1%80/"
-            id="categoriesE5898DE7ABAFE59FBAE7A180"
-            ><div class='name'>基础</div><div class='badge'>(4)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/" href="/categories/%E5%89%8D%E7%AB%AF/%E9%9D%A2%E8%AF%95/"
-            id="categoriesE5898DE7ABAFE99DA2E8AF95"
-            ><div class='name'>面试</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%AD%A6%E4%B9%A0/" href="/categories/%E5%AD%A6%E4%B9%A0/"
-            id="categoriesE5ADA6E4B9A0"
-            ><div class='name'>学习</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E5%B7%A5%E5%85%B7/" href="/categories/%E5%B7%A5%E5%85%B7/"
-            id="categoriesE5B7A5E585B7"
-            ><div class='name'>工具</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E7%94%9F%E6%B4%BB/" href="/categories/%E7%94%9F%E6%B4%BB/"
-            id="categoriesE7949FE6B4BB"
-            ><div class='name'>生活</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%94%9F%E6%B4%BB/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/" href="/categories/%E7%94%9F%E6%B4%BB/%E5%BF%83%E8%B7%AF%E5%8E%86%E7%A8%8B/"
-            id="categoriesE7949FE6B4BBE5BF83E8B7AFE58E86E7A88B"
-            ><div class='name'>心路历程</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%94%9F%E6%B4%BB/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/" href="/categories/%E7%94%9F%E6%B4%BB/%E5%BF%85%E5%A4%87%E8%BD%AF%E4%BB%B6/"
-            id="categoriesE7949FE6B4BBE5BF85E5A487E8BDAFE4BBB6"
-            ><div class='name'>必备软件</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box child"
-            title="/categories/%E7%94%9F%E6%B4%BB/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/" href="/categories/%E7%94%9F%E6%B4%BB/%E7%A8%8B%E5%BA%8F%E4%BA%BA%E7%94%9F/"
-            id="categoriesE7949FE6B4BBE7A88BE5BA8FE4BABAE7949F"
-            ><div class='name'>程序人生</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#uniapp%E4%B8%AD%E5%8A%A8%E6%80%81tabbar%E5%AE%9E%E7%8E%B0"><span class="toc-text">uniapp中动态tabbar实现</span></a></li></ol>
     </div>
   </section>
 
-
-  
-
-  
-    
-    
-  
-
-  <section class="widget tagcloud shadow desktop mobile">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fas fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/HTML%E3%80%81HTTP/" style="font-size: 15.6px; color: #8b8b8b">HTML、HTTP</a> <a href="/tags/JavaScript/" style="font-size: 14px; color: #999">JavaScript</a> <a href="/tags/javascript/" style="font-size: 17.2px; color: #7e7e7e">javascript</a> <a href="/tags/js/" style="font-size: 15.6px; color: #8b8b8b">js</a> <a href="/tags/layui/" style="font-size: 15.6px; color: #8b8b8b">layui</a> <a href="/tags/php%E9%9D%A2%E8%AF%95/" style="font-size: 14px; color: #999">php面试</a> <a href="/tags/uni-app/" style="font-size: 15.6px; color: #8b8b8b">uni-app</a> <a href="/tags/vscode/" style="font-size: 14px; color: #999">vscode</a> <a href="/tags/vue/" style="font-size: 14px; color: #999">vue</a> <a href="/tags/webstorm/" style="font-size: 14px; color: #999">webstorm</a> <a href="/tags/windows/" style="font-size: 14px; color: #999">windows</a> <a href="/tags/%E4%BA%BA%E7%94%9F/" style="font-size: 14px; color: #999">人生</a> <a href="/tags/%E5%88%86%E4%BA%AB/" style="font-size: 17.2px; color: #7e7e7e">分享</a> <a href="/tags/%E5%89%8D%E7%AB%AF/" style="font-size: 22px; color: #555">前端</a> <a href="/tags/%E5%8A%AA%E5%8A%9B/" style="font-size: 15.6px; color: #8b8b8b">努力</a> <a href="/tags/%E5%8F%A4%E6%80%AA%E5%AD%A6%E4%B9%A0/" style="font-size: 14px; color: #999">古怪学习</a> <a href="/tags/%E5%90%8E%E7%AB%AF/" style="font-size: 14px; color: #999">后端</a> <a href="/tags/%E5%9F%BA%E7%A1%80/" style="font-size: 18.8px; color: #707070">基础</a> <a href="/tags/%E5%A5%8B%E6%96%97/" style="font-size: 15.6px; color: #8b8b8b">奋斗</a> <a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" style="font-size: 20.4px; color: #636363">学习笔记</a> <a href="/tags/%E5%BC%80%E5%8F%91/" style="font-size: 18.8px; color: #707070">开发</a> <a href="/tags/%E6%84%9F%E6%82%9F/" style="font-size: 14px; color: #999">感悟</a> <a href="/tags/%E6%8C%87%E5%8D%97/" style="font-size: 14px; color: #999">指南</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E5%BC%80%E5%8F%91/" style="font-size: 14px; color: #999">接口开发</a> <a href="/tags/%E6%95%88%E7%8E%87%E5%BC%80%E5%8F%91/" style="font-size: 15.6px; color: #8b8b8b">效率开发</a> <a href="/tags/%E8%BD%AF%E4%BB%B6/" style="font-size: 14px; color: #999">软件</a> <a href="/tags/%E9%A1%B5%E9%9D%A2%E6%93%8D%E4%BD%9C/" style="font-size: 15.6px; color: #8b8b8b">页面操作</a>
-    </div>
-  </section>
-
-
-  
-
-  
-    
-    
-
-<section class="widget qrcode shadow desktop mobile">
-  
-
-  <div class='content article-entry'>
-    
-      <img src='https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/qrcode/github@volantis.png'
-      
-        height='64px'
-      />
-    
-  </div>
-</section>
-
-  
-
-  
-    
-    
-
-<section class="widget shadow desktop">
-  
-  <header>
-    
-      <i class="fas fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>20 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count" publish_date="03/24/2020 21:34:09"></div>
-        </div>
-        <script>
-          var BirthDay = new Date(new Date('2020/01/01'));
-          var today = new Date();
-          var timeold = (today.getTime() - BirthDay.getTime());
-          var daysold = Math.floor(timeold / (24 * 60 * 60 * 1000));
-          document.getElementById('webinfo-runtime-count').innerHTML = daysold + ' 天';
-        </script>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>68.4k 字</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站访客数：</div>
-          
-          <div><span id="lc-uv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 人</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>本站总访问量：</div>
-          
-          <div><span id="lc-sv"><span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span></span> 次</div>
-          
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          
-            <div id="last-update" style="display: none;">Sun Apr 24 2022 22:47:01 GMT+0800 (GMT+08:00)</div>
-            <div id="last-update-show">2022-04-24 日</div>
-          
-        </div>
-        
-        <script>
-          function timeago(dateTimeStamp) {
-              var minute = 1000 * 60; //把分，时，天，周，半个月，一个月用毫秒表示
-              var hour = minute * 60;
-              var day = hour * 24;
-              var week = day * 7;
-              var month = day * 30;
-              var now = new Date().getTime(); //获取当前时间毫秒
-              var diffValue = now - dateTimeStamp; //时间差
-              if (diffValue < 0) {
-                  return;
-              }
-              var minC = diffValue / minute; //计算时间差的分，时，天，周，月
-              var hourC = diffValue / hour;
-              var dayC = diffValue / day;
-              var weekC = diffValue / week;
-              var monthC = diffValue / month;
-              if (monthC >= 1 && monthC <= 3) {
-                  result = " " + parseInt(monthC) + " 月前"
-              } else if (weekC >= 1 && weekC <= 3) {
-                  result = " " + parseInt(weekC) + " 周前"
-              } else if (dayC >= 1 && dayC <= 6) {
-                  result = " " + parseInt(dayC) + " 天前"
-              } else if (hourC >= 1 && hourC <= 23) {
-                  result = " " + parseInt(hourC) + " 小时前"
-              } else if (minC >= 1 && minC <= 59) {
-                  result = " " + parseInt(minC) + " 分钟前"
-              } else if (diffValue >= 0 && diffValue <= minute) {
-                  result = "刚刚"
-              } else {
-                  var datetime = new Date();
-                  datetime.setTime(dateTimeStamp);
-                  var Nyear = datetime.getFullYear();
-                  var Nmonth = datetime.getMonth() + 1 < 10 ? "0" + (datetime.getMonth() + 1) : datetime.getMonth() + 1;
-                  var Ndate = datetime.getDate() < 10 ? "0" + datetime.getDate() : datetime.getDate();
-                  var Nhour = datetime.getHours() < 10 ? "0" + datetime.getHours() : datetime.getHours();
-                  var Nminute = datetime.getMinutes() < 10 ? "0" + datetime.getMinutes() : datetime.getMinutes();
-                  var Nsecond = datetime.getSeconds() < 10 ? "0" + datetime.getSeconds() : datetime.getSeconds();
-                  result = Nyear + "-" + Nmonth + "-" + Ndate
-              }
-              return result;
-          }
-          var lastUpDate = document.getElementById('last-update').innerHTML;
-          try {
-            document.getElementById('last-update-show').innerHTML = timeago(new Date(lastUpDate));
-          } catch (error) {
-            document.getElementById('last-update-show').innerHTML = '2022-04-24 日';
-          }
-        </script>
-        
-      
-    </div>
-  </div>
-</section>
-
-  
 
   
 
 
 </aside>
+
 
 
       </div>
